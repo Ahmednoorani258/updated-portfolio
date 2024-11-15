@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Sidebar from "@/components/Sidebar";
 import "./globals.css";
+import MouseTrackingBackground from "@/components/MouseTrackingComponent";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -27,12 +28,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <MouseTrackingBackground />
         <div className="flex min-h-screen">
           {/* Sidebar */}
           <Sidebar />
 
           {/* Main Content Area */}
-          <main className="flex-grow p-6 md:p-8 bg-gray-50 dark:bg-gray-900 transition-colors duration-300 ease-in-out">
+          <main className="flex-grow px-8 sm:px-12 md:px-16 lg:px-20 text-black dark:text-white bg-gray-50 dark:bg-gray-900 transition-colors duration-300 ease-in-out">
             {children}
           </main>
         </div>

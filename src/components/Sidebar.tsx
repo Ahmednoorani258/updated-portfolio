@@ -37,25 +37,25 @@ export default function Sidebar() {
 }, [isDarkMode]);
 
   return (
-    <div className={`flex min-h-screen ${isDarkMode ? "bg-gray-900 text-white" : "bg-white text-black"}`}>
+    <div className="flex min-h-screen dark:bg-gray-900 dark:text-white : bg-white text-black">
       {/* Mobile Toggle Button */}
       <button
         onClick={toggleSidebar}
-        className="md:hidden fixed top-4 left-4 z-50 text-gray-800 bg-green-300 rounded-full p-3 shadow-md"
+        className=" md:hidden fixed top-4 left-4 z-50 text-gray-800 bg-green-500 dark:bg-green-300 rounded-full p-3 shadow-md"
       >
-        <FaBars size={20} className="text-white" />
+        <FaBars size={20} className="text-white dark:text-gray-500" />
       </button>
 
       {/* Sidebar */}
       <aside
-        className={`fixed top-0 left-0 h-full w-64 p-5 space-y-8 transform ${isOpen ? "translate-x-0" : "-translate-x-full"} 
-          transition-transform duration-300 ease-in-out ${isDarkMode ? "bg-gray-800 text-white" : "bg-gray-100 text-black"} 
+        className={`fixed top-0 left-0 h-full w-64 border-r border-green-500 dark:border-green-300 p-5 space-y-8 transform ${isOpen ? "translate-x-0" : "-translate-x-full"} 
+          transition-transform duration-300 ease-in-out dark:bg-gray-800 dark:text-white bg-gray-200 text-black 
           md:translate-x-0 md:static md:block z-40`}
         onClick={(e) => e.stopPropagation()} // Prevent clicks inside sidebar from closing it
       >
         {/* Header */}
         <div className="flex items-center justify-between mb-4">
-          <h1 className="text-2xl font-bold mt-16">Code<span className=" text-green-300">AN</span></h1>
+          <h1 className="text-2xl font-bold mt-16">Code<span className=" text-green-500 dark:text-green-300">AN</span></h1>
           <button onClick={toggleSidebar} className="md:hidden text-2xl">
             &times;
           </button>
@@ -71,29 +71,29 @@ export default function Sidebar() {
 
         {/* Navigation Links */}
         <nav className="space-y-6">
-          <Link href="#home" className="flex items-center space-x-3 hover:text-green-300" onClick={toggleSidebar}>
+          <Link href="/" className="flex items-center space-x-3 dark:hover:text-green-300 hover:text-green-500" onClick={toggleSidebar}>
             <FaHome /> <span className="font-semibold">Home</span>
           </Link>
-          <Link href="#about" className="flex items-center space-x-3 hover:text-green-300" onClick={toggleSidebar}>
+          <Link href="/about" className="flex items-center space-x-3 dark:hover:text-green-300 hover:text-green-500" onClick={toggleSidebar}>
             <FaUser /> <span className="font-semibold">About</span>
           </Link>
-          <Link href="#services" className="flex items-center space-x-3 hover:text-green-300" onClick={toggleSidebar}>
+          <Link href="/services" className="flex items-center space-x-3 dark:hover:text-green-300 hover:text-green-500" onClick={toggleSidebar}>
             <FaTools /> <span className="font-semibold">Services</span>
           </Link>
-          <Link href="#projects" className="flex items-center space-x-3 hover:text-green-300" onClick={toggleSidebar}>
+          <Link href="/projects" className="flex items-center space-x-3 dark:hover:text-green-300 hover:text-green-500" onClick={toggleSidebar}>
             <FaProjectDiagram /> <span className="font-semibold">Projects</span>
           </Link>
-          <Link href="#contact" className="flex items-center space-x-3 hover:text-green-300" onClick={toggleSidebar}>
+          <Link href="/contact" className="flex items-center space-x-3 dark:hover:text-green-300 hover:text-green-500" onClick={toggleSidebar}>
             <FaEnvelope /> <span className="font-semibold">Contact</span>
           </Link>
         </nav>
 
         {/* Social Media Links */}
-        <div className="flex justify-center space-x-4 mt-10">
-          <Link href="https://linkedin.com" target="_blank" className="hover:text-green-300">
+        <div className="flex justify-center space-x-4 mt-12 border-b border-green-500 dark:border-green-300">
+          <Link href="https://linkedin.com" target="_blank" className="hover:text-green-500 dark:hover:text-green-300">
             <FaLinkedin size={20} />
           </Link>
-          <Link href="https://github.com" target="_blank" className="hover:text-green-300">
+          <Link href="https://github.com" target="_blank" className="hover:text-green-500 dark:hover:text-green-300" >
             <FaGithub size={20} />
           </Link>
         </div>
