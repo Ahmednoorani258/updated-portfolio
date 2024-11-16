@@ -3,7 +3,7 @@ export default function HeroSection() {
   return (
     <section className=" container min-h-screen mx-auto flex flex-col md:flex-row items-center justify-center md:mt-0" >
       <div className="  md:max-w-3xl md:pr-8 lg:xl ">
-        <h6 className=" text-gray-400 py-4 text-2xl italic font-serif">hello! </h6>
+        <h6 className=" text-gray-400 py-4 mt-12 text-2xl italic font-serif">hello! </h6>
         <h1 className="text-3xl md:text-5xl font-bold text-gray-800 dark:text-white lg:text-6xl">
           I am <span className="text-green-500 dark:text-green-300 ">A</span>hmed{" "}
           <span className="text-green-500 dark:text-green-300">N</span>oorani.
@@ -21,11 +21,11 @@ export default function HeroSection() {
           With a passion for frontend development and design, I create
           responsive, aesthetic, and engaging digital experiences.
         </p>
-        <div className="mt-6 space-x-4">
-          <button className="hover:shadow-intenseGlow px-9 py-4 bg-green-500 dark:bg-green-300  text-white dark:text-black  font-bold rounded-lg hover:bg-green-600 dark:hover:bg-green-400 transition duration-300">
+        <div className="mt-6 space-x-2 sm: space-x-4">
+          <button className="hover:shadow-intenseGlow px-4 sm:px-9 py-4  bg-green-500 dark:bg-green-300  text-white dark:text-black  font-bold rounded-lg hover:bg-green-600 dark:hover:bg-green-400 transition duration-300">
             Hire Me
           </button>
-          <button className="hover:shadow-intenseGlow px-9 py-4 border border-green-500 dark:border-green-300 text-green-500 dark:text-green-300 font-bold rounded-lg hover:bg-green-600 hover:text-white dark:hover:bg-green-300 dark:hover:text-black transition duration-300 ">
+          <button className="hover:shadow-intenseGlow px-4 sm:px-9 py-4 border border-green-500 dark:border-green-300 text-green-500 dark:text-green-300 font-bold rounded-lg hover:bg-green-600 hover:text-white dark:hover:bg-green-300 dark:hover:text-black transition duration-300 ">
             View My Work
           </button>
         </div>
