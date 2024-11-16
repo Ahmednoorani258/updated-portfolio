@@ -1,7 +1,10 @@
-export default function FeaturedProjects(){
-    return(
-        <section>
-            d
-        </section>
-    )
-}
+"use client";
+
+const FeaturedProjects = () => {
+
+ return (
+    <div>h</div>
+ )
+};
+
+export default FeaturedProjects;

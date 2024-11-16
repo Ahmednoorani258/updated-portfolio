@@ -277,3 +277,5 @@ enum ProjectLevel {
     },
   ];
   
+  export { projectData };
+  export type { ProjectDatatype , InterfaceType, ProjectLevel};

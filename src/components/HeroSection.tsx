@@ -21,7 +21,7 @@ export default function HeroSection() {
           With a passion for frontend development and design, I create
           responsive, aesthetic, and engaging digital experiences.
         </p>
-        <div className="mt-6 space-x-2 sm: space-x-4">
+        <div className="mt-6 space-x-2 sm:space-x-4">
           <button className="hover:shadow-intenseGlow px-4 sm:px-9 py-4  bg-green-500 dark:bg-green-300  text-white dark:text-black  font-bold rounded-lg hover:bg-green-600 dark:hover:bg-green-400 transition duration-300">
             Hire Me
           </button>
