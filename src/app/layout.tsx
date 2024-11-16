@@ -27,18 +27,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <MouseTrackingBackground />
-        <div className="flex min-h-screen">
-          {/* Sidebar */}
-          <Sidebar />
+  <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+    <MouseTrackingBackground />
+    <div className="flex">
+      {/* Sidebar */}
+      <Sidebar />
 
-          {/* Main Content Area */}
-          <main className="flex-grow px-8 sm:px-12 md:px-16 lg:px-20 text-black dark:text-white bg-gray-50 dark:bg-gray-900 transition-colors duration-300 ease-in-out">
-            {children}
-          </main>
-        </div>
-      </body>
-    </html>
+      {/* Main Content Area */}
+      <main className="flex-grow min-h-screen overflow-y-auto px-8 sm:px-12 md:px-16 lg:px-20 text-black dark:text-white bg-gray-50 dark:bg-gray-900 transition-colors duration-300 ease-in-out md:ml-64">
+        {children}
+      </main>
+    </div>
+  </body>
+</html>
+
   );
 }

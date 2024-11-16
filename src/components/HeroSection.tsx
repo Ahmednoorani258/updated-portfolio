@@ -36,10 +36,9 @@ export default function HeroSection() {
           alt="profilepic"
           width={300}
           height={300}
-          className="rounded-full"
+          className="rounded-full animate-glow"
         ></Image>
       </div>
     </section>
   );
 }
-????????????????? 

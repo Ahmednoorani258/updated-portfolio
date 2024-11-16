@@ -37,7 +37,7 @@ export default function Sidebar() {
 }, [isDarkMode]);
 
   return (
-    <div className="flex min-h-screen dark:bg-gray-900 dark:text-white : bg-white text-black">
+    <div className="z-10 flex h-full fixed dark:bg-gray-900 dark:text-white : bg-white text-black">
       {/* Mobile Toggle Button */}
       <button
         onClick={toggleSidebar}
