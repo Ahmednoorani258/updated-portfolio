@@ -34,8 +34,8 @@ export default function HeroSection() {
         <Image
           src={"/"}
           alt="profilepic"
-          width={300}
-          height={300}
+          width={280}
+          height={280}
           className="rounded-full animate-glow"
         ></Image>
       </div>
