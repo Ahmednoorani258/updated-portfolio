@@ -22,13 +22,13 @@ export default function Home() {
     <div className="mt-6 flex justify-center gap-4">
       <a
         href="/contact"
-        className="bg-green-500 text-white px-6 py-3 rounded-lg shadow-md hover:bg-green-600 transition-all"
+        className="bg-green-500 dark:bg-green-300 text-white px-6 py-3 rounded-lg shadow-md hover:bg-green-600 transition-all"
       >
         Contact Me
       </a>
       <a
         href="/projects"
-        className="border border-green-500 text-green-500 px-6 py-3 rounded-lg shadow-md hover:bg-green-500 hover:text-white transition-all"
+        className="border border-green-500 dark:border-green-300 text-green-500 dark:text-green-300 px-6 py-3 rounded-lg shadow-md hover:bg-green-500 hover:text-white transition-all"
       >
         View Projects
       </a>
