@@ -34,7 +34,7 @@ export default function RootLayout({
       <Sidebar />
 
       {/* Main Content Area */}
-      <main className="flex-grow min-h-screen overflow-y-auto px-8 sm:px-12 md:px-16 lg:px-20 text-black dark:text-white bg-gray-50 dark:bg-gray-900 transition-colors duration-300 ease-in-out md:ml-64">
+      <main className="flex-grow min-h-screen overflow-y-auto text-black dark:text-white bg-gray-50 dark:bg-gray-900 transition-colors duration-300 ease-in-out md:ml-64">
         {children}
       </main>
     </div>

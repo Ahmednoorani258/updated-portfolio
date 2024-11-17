@@ -7,10 +7,12 @@ export default function Home() {
 
   return (
     <>
+    <div className=" px-8 sm:px-12 md:px-16 lg:px-20">
       <HeroSection />
       <About/>
       <Service/>
       <FeaturedProjects />
+      </div>
       <section className="bg-gray-100 dark:bg-gray-800 py-16">
   <div className="container mx-auto text-center">
     <h2 className="text-3xl font-semibold text-gray-800 dark:text-white">
@@ -22,7 +24,7 @@ export default function Home() {
     <div className="mt-6 flex justify-center gap-4">
       <a
         href="/contact"
-        className="bg-green-500 dark:bg-green-300 text-white px-6 py-3 rounded-lg shadow-md hover:bg-green-600 transition-all"
+        className="bg-green-500 dark:bg-green-300 text-white dark:text-black px-6 py-3 rounded-lg shadow-md hover:bg-green-600 transition-all"
       >
         Contact Me
       </a>
@@ -35,7 +37,7 @@ export default function Home() {
     </div>
   </div>
 </section>
+</>
 
-    </>
   );
 }
