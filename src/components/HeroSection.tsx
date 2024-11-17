@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function HeroSection() {
   return (
@@ -32,10 +33,10 @@ export default function HeroSection() {
         {/* Buttons */}
         <div className="mt-6 space-x-2 sm:space-x-4">
           <button className="hover:shadow-intenseGlow px-4 sm:px-9 py-4 bg-green-500 dark:bg-green-300 text-white dark:text-black font-bold rounded-lg hover:bg-green-600 dark:hover:bg-green-400 transition duration-300">
-            Hire Me
+            <Link href="/contact">Hire Me</Link>
           </button>
           <button className="hover:shadow-intenseGlow px-4 sm:px-9 py-4 border border-green-500 dark:border-green-300 text-green-500 dark:text-green-300 font-bold rounded-lg hover:bg-green-600 hover:text-white dark:hover:bg-green-300 dark:hover:text-black transition duration-300">
-            View My Work
+          <Link href="/projects">View My Work</Link>
           </button>
         </div>
       </div>
