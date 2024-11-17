@@ -16,10 +16,10 @@ export default function Home() {
       <section className="bg-gray-100 dark:bg-gray-800 py-16">
   <div className="container mx-auto text-center">
     <h2 className="text-3xl font-semibold text-gray-800 dark:text-white">
-      Let's Work Together!
+      Let&apos;s Work Together!
     </h2>
     <p className="text-gray-600 dark:text-gray-300 mt-4">
-      Have a project in mind? Feel free to reach out and let's build something amazing.
+      Have a project in mind? Feel free to reach out and let&apos;s build something amazing.
     </p>
     <div className="mt-6 flex justify-center gap-4">
       <a
