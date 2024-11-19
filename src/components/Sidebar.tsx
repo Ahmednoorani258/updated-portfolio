@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { useRouter , usePathname} from "next/navigation"; // Ensure this is the correct import based on your setup
+import {  usePathname} from "next/navigation"; // Ensure this is the correct import based on your setup
 import {
   FaHome,
   FaUser,
@@ -19,7 +19,6 @@ export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
 
-  const router = useRouter(); // Use Next.js router hook
   const pathname = usePathname();
 
   const toggleSidebar = () => {

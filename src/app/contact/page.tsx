@@ -11,7 +11,7 @@ export default function ContactPage() {
             Get in <span className="text-green-500 dark:text-green-300">Touch</span>
           </h1>
           <p className="text-lg text-gray-600 dark:text-gray-300">
-            I'd love to hear from you! Feel free to reach out anytime.
+            I&apos;d love to hear from you! Feel free to reach out anytime.
           </p>
         </div>
 

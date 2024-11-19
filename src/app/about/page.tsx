@@ -17,7 +17,7 @@ export default function AboutPage() {
             About <span className="text-green-500 dark:text-green-300">Me</span>
           </h1>
           <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-            I'm <span className="text-green-500 dark:text-green-300">Ahmed Noorani</span>, a passionate Frontend Developer and Graphic Designer with expertise in crafting visually stunning and user-friendly web experiences. I bring ideas to life through modern web technologies and creative visuals.
+            I&lsquo;m <span className="text-green-500 dark:text-green-300">Ahmed Noorani</span>, a passionate Frontend Developer and Graphic Designer with expertise in crafting visually stunning and user-friendly web experiences. I bring ideas to life through modern web technologies and creative visuals.
           </p>
           <p className="mt-4 text-gray-600 dark:text-gray-400">
             From creating seamless user interfaces to branding and motion graphics, I aim to deliver experiences that leave a lasting impact.
