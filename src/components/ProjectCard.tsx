@@ -3,7 +3,7 @@ import { projectCard } from "@/app/data/Projectdata";
 
 export default function ProjectCard({ project }: { project: projectCard }) {
   return (
-    <div className="flex flex-col justify-between bg-white dark:bg-gray-800 shadow-md rounded-lg overflow-hidden hover:shadow-intenseGlow transition-shadow duration-300 border-t-4 border-green-500 dark:border-green-300">
+    <div className="flex flex-col justify-between bg-white dark:bg-gray-800 shadow-md rounded-lg overflow-hidden hover:shadow-glow transition-shadow duration-300 border-t-4 border-green-500 dark:border-green-300">
       {/* Image Section */}
       {project.image ? (
         <Image

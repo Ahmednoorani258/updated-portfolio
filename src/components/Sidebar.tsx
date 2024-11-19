@@ -89,7 +89,7 @@ export default function Sidebar() {
         </nav>
 
         {/* Social Media Links */}
-        <div className="flex justify-center space-x-4 mt-12 border-b border-green-500 dark:border-green-300">
+        <div className="flex justify-center space-x-4 mt-12 py-4 border-b border-green-500 dark:border-green-300">
           <Link href="https://www.linkedin.com/in/mahmednorani/" target="_blank" className="hover:text-green-500 dark:hover:text-green-300">
             <FaLinkedin size={20} />
           </Link>

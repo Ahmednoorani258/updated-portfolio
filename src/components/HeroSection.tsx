@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { TypeAnimation } from "react-type-animation";
 
 export default function HeroSection() {
   return (
@@ -13,15 +16,32 @@ export default function HeroSection() {
       {/* Main Content */}
       <div className="md:max-w-3xl md:pr-8 lg:xl">
         <h6 className="text-gray-400 py-4 mt-12 text-2xl italic font-serif">hello!</h6>
-        <h1 className="text-3xl md:text-5xl font-bold text-gray-800 dark:text-white lg:text-6xl">
+        <h1 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white lg:text-6xl">
           I am <span className="text-green-500 dark:text-green-300">A</span>hmed{" "}
           <span className="text-green-500 dark:text-green-300">N</span>oorani.
           <br />
-          A{" "}
+          <p className="border-l-4 border-green-500 dark:border-green-300 mt-4 text-xl md:text-2xl text-gray-600 dark:text-gray-300">
+          <TypeAnimation
+                sequence={[
+                  "Full Stack Developer", // Displayed text
+                  1500, // Time to display
+                  "Frontend Developer", 
+                  1500,
+                  "Graphic Designer",
+                  1500,
+                  "UI/UX Enthusiast",
+                  1500,
+                ]}
+                wrapper="span"
+                speed={70}
+                repeat={Infinity}
+              />
+        </p>
+          {/* A{" "}
           <span className="text-green-500 dark:text-green-300">F</span>rontend{" "}
           <span className="text-green-500 dark:text-green-300">D</span>eveloper
           & <span className="text-green-500 dark:text-green-300">G</span>raphic{" "}
-          <span className="text-green-500 dark:text-green-300">D</span>esigner.
+          <span className="text-green-500 dark:text-green-300">D</span>esigner. */}
         </h1>
         <h2 className="mt-6 text-lg text-gray-600 dark:text-gray-300 md:text-xl">
           Crafting visually stunning and user-friendly web experiences.
