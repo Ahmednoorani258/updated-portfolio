@@ -1,7 +1,46 @@
-"use client"
+"use client";
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaLinkedin, FaGithub } from "react-icons/fa";
 
+
 export default function ContactPage() {
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    // Accessing form data
+    const formData = new FormData(event.target as HTMLFormElement);
+
+    formData.append("access_key", "020ddf62-0ad6-455c-b032-c88906c56934");
+
+    const object = Object.fromEntries(formData.entries());
+    const json = JSON.stringify(object);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: json,
+      });
+      const result = await response.json();
+
+      if (result.success) {
+        // Reset the form fields
+        (event.target as HTMLFormElement).reset();
+
+        // Show an alert
+        alert("Your message has been sent successfully!");
+      } else {
+        // Handle error case
+        alert("There was an error submitting the form. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("An unexpected error occurred. Please try again.");
+    }
+  }
+
   return (
     <div className="bg-gray-50 dark:bg-gray-900 min-h-screen py-16 px-6">
       <div className="container mx-auto">
@@ -70,11 +109,11 @@ export default function ContactPage() {
               </div>
             </div>
 
-
             {/* Map */}
             <div className="overflow-hidden rounded-lg shadow-2xl">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3619.325928352286!2d67.05016657559597!3d24.88686184420016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33ef0aaf3bb6d%3A0x683dfc78735028ab!2sJamshed%20Rd%2C%20Government%20Quarters%20Jail%20Road%2C%20Karachi%2C%20Karachi%20City%2C%20Sindh%2C%20Pakistan!5e0!3m2!1sen!2s!4v1731997029414!5m2!1sen!2s" width="100%"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3619.325928352286!2d67.05016657559597!3d24.88686184420016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33ef0aaf3bb6d%3A0x683dfc78735028ab!2sJamshed%20Rd%2C%20Government%20Quarters%20Jail%20Road%2C%20Karachi%2C%20Karachi%20City%2C%20Sindh%2C%20Pakistan!5e0!3m2!1sen!2s!4v1731997029414!5m2!1sen!2s"
+                width="100%"
                 height="250"
                 allowFullScreen={true}
                 aria-hidden="false"
@@ -89,7 +128,7 @@ export default function ContactPage() {
             <h2 className="text-2xl font-semibold text-gray-800 dark:text-white mb-4">
               Send a Message
             </h2>
-            <form action="#" method="POST" className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label
                   htmlFor="name"
@@ -130,7 +169,7 @@ export default function ContactPage() {
                 <textarea
                   id="message"
                   name="message"
-                  draggable = "false"
+                  draggable="false"
                   rows={6}
                   className="w-full bg-gray-50 dark:bg-gray-700 text-gray-800 dark:text-gray-200 border border-gray-300 dark:border-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
                   required
