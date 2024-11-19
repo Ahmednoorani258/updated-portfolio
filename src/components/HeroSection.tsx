@@ -20,7 +20,7 @@ export default function HeroSection() {
           I am <span className="text-green-500 dark:text-green-300">A</span>hmed{" "}
           <span className="text-green-500 dark:text-green-300">N</span>oorani.
           <br />
-          <p className="border-l-4 border-green-500 dark:border-green-300 mt-4 text-xl md:text-2xl text-gray-600 dark:text-gray-300">
+          <p className="border-l-4 pl-4 border-green-500 dark:border-green-300 mt-4 text-xl md:text-2xl text-gray-600 dark:text-gray-300">
           <TypeAnimation
                 sequence={[
                   "Full Stack Developer", // Displayed text

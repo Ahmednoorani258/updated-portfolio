@@ -19,7 +19,7 @@ export default function About() {
                     {/* Left Column - Image */}
                     <div className="lg:w-1/3 w-full text-center lg:text-left relative">
                         {/* Animated Circle around Image */}
-                        <div className="absolute inset-0 w-full h-full bg-green-500 opacity-10 rounded-full animate-pulse-slow"></div>
+                        <div className=" h-full bg-green-500 opacity-10 rounded-full "></div>
                         <Image
                             src={'/profile.jpg'} // Replace with your image path
                             alt="Ahmed Noorani"

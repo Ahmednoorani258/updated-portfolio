@@ -3,20 +3,17 @@ import Service from "@/components/Service";
 import HeroSection from "@/components/HeroSection";
 import FeaturedProjects from "@/components/FeaturedProjects";
 import CAllToActionSec from "@/components/CallTOActionSec";
-import WhatsappButton from "@/components/WhatsappButton";
-export default function Home() {
 
+export default function Home() {
   return (
     <>
-    <WhatsappButton/>
-    <div className=" px-8 sm:px-12 md:px-16 lg:px-20">
-      <HeroSection />
-      <About/>
-      <Service/>
-      <FeaturedProjects />
+      <div className=" px-8 sm:px-12 md:px-16 lg:px-20">
+        <HeroSection />
+        <About />
+        <Service />
+        <FeaturedProjects />
       </div>
-      <CAllToActionSec/>
-</>
-
+      <CAllToActionSec />
+    </>
   );
 }
