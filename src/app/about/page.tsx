@@ -29,7 +29,7 @@ export default function AboutPage() {
         <div className="lg:w-1/2 relative">
           <div className="w-64 h-64 mx-auto lg:mx-0 rounded-full border-4 border-green-500 dark:border-green-300 relative overflow-hidden">
             <Image
-              src="/profile.jpg" // Replace with actual image
+              src="/profile.png" // Replace with actual image
               alt="Ahmed Noorani"
               layout="fill"
               objectFit="cover"

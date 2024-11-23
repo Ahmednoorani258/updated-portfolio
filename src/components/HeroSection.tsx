@@ -15,28 +15,30 @@ export default function HeroSection() {
 
       {/* Main Content */}
       <div className="md:max-w-3xl md:pr-8 lg:xl">
-        <h6 className="text-gray-400 py-4 mt-12 text-2xl italic font-serif">hello!</h6>
+        <h6 className="text-gray-400 py-4 mt-12 text-2xl italic font-serif">
+          hello!
+        </h6>
         <h1 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white lg:text-6xl">
           I am <span className="text-green-500 dark:text-green-300">A</span>hmed{" "}
           <span className="text-green-500 dark:text-green-300">N</span>oorani.
           <br />
           <p className="border-l-4 pl-4 border-green-500 dark:border-green-300 mt-4 text-xl md:text-2xl text-gray-600 dark:text-gray-300">
-          <TypeAnimation
-                sequence={[
-                  "Full Stack Developer", // Displayed text
-                  1500, // Time to display
-                  "Frontend Developer", 
-                  1500,
-                  "Graphic Designer",
-                  1500,
-                  "UI/UX Enthusiast",
-                  1500,
-                ]}
-                wrapper="span"
-                speed={70}
-                repeat={Infinity}
-              />
-        </p>
+            <TypeAnimation
+              sequence={[
+                "Full Stack Developer", // Displayed text
+                1500, // Time to display
+                "Frontend Developer",
+                1500,
+                "Graphic Designer",
+                1500,
+                "UI/UX Enthusiast",
+                1500,
+              ]}
+              wrapper="span"
+              speed={70}
+              repeat={Infinity}
+            />
+          </p>
           {/* A{" "}
           <span className="text-green-500 dark:text-green-300">F</span>rontend{" "}
           <span className="text-green-500 dark:text-green-300">D</span>eveloper
@@ -47,7 +49,8 @@ export default function HeroSection() {
           Crafting visually stunning and user-friendly web experiences.
         </h2>
         <p className="mt-4 text-gray-500 dark:text-gray-400">
-          With a passion for frontend development and design, I create responsive, aesthetic, and engaging digital experiences.
+          With a passion for frontend development and design, I create
+          responsive, aesthetic, and engaging digital experiences.
         </p>
 
         {/* Buttons */}
@@ -56,20 +59,21 @@ export default function HeroSection() {
             <Link href="/contact">Hire Me</Link>
           </button>
           <button className="hover:shadow-intenseGlow px-4 sm:px-9 py-4 border border-green-500 dark:border-green-300 text-green-500 dark:text-green-300 font-bold rounded-lg hover:bg-green-600 hover:text-white dark:hover:bg-green-300 dark:hover:text-black transition duration-300">
-          <Link href="/projects">View My Work</Link>
+            <Link href="/projects">View My Work</Link>
           </button>
         </div>
       </div>
 
       {/* Profile Image with Animation */}
-      <div className="relative border-4 mt-10 border-green-500 dark:border-green-300 rounded-full p-4">
-        <div className="absolute inset-0 w-full h-full bg-green-500 opacity-10 rounded-full animate-glow-slow"></div>
+      <div className="lg:w-1/3 w-full text-center mt-12 lg:text-left relative">
+        {/* Animated Circle around Image */}
+        <div className=" h-full bg-green-500 opacity-10 rounded-full "></div>
         <Image
-          src={"/"} // Replace with actual image path
-          alt="profilepic"
-          width={280}
-          height={280}
-          className="rounded-full animate-glow"
+          src={"/profile.png"} // Replace with your image path
+          alt="Ahmed Noorani"
+          height={300}
+          width={300}
+          className="rounded-full mx-auto lg:mx-0 border-4 border-green-500 dark:border-green-300 shadow-lg"
         />
       </div>
 

@@ -18,7 +18,7 @@ const MouseTracker = () => {
       this.x = x;
       this.y = y;
       this.size = Math.random() * 4 + 2; // Size between 2 and 8
-      this.color = "rgba(2, 249, 142, .5)";
+      this.color = "rgba(54, 181, 138, .4)";
       this.velocityX = (Math.random() - 0.5) * 1.5; // Slower X velocity
       this.velocityY = (Math.random() - 0.5) * 1.5; // Slower Y velocity
       this.opacity = 1;
@@ -33,7 +33,7 @@ const MouseTracker = () => {
     update() {
       this.x += this.velocityX * 0.8; // Dampen speed for smoother motion
       this.y += this.velocityY * 0.8;
-      this.opacity -= 0.01; // Slower fade-out
+      this.opacity -= 0.005; // Slower fade-out
     }
   
     isVisible() {

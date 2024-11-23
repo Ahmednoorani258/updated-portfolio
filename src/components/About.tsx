@@ -21,7 +21,7 @@ export default function About() {
                         {/* Animated Circle around Image */}
                         <div className=" h-full bg-green-500 opacity-10 rounded-full "></div>
                         <Image
-                            src={'/profile.jpg'} // Replace with your image path
+                            src={'/profile.png'} // Replace with your image path
                             alt="Ahmed Noorani"
                             height={300}
                             width={300}
