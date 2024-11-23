@@ -66,7 +66,7 @@ export default function Sidebar() {
 
       {/* Sidebar */}
       <aside
-        className={`fixed top-0 left-0 h-full w-80 border-r border-green-500 dark:border-green-300 p-5 space-y-8 transform ${
+        className={`fixed top-0 left-0 h-full w-64 md:w-72 lg:w-80 border-r border-green-500 dark:border-green-300 p-5 space-y-8 transform ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         } 
           transition-transform duration-300 ease-in-out dark:bg-gray-800 dark:text-white bg-gray-200 text-black 
@@ -96,13 +96,13 @@ export default function Sidebar() {
         </div>
 
         {/* Navigation Links */}
-        <nav className="space-y-12 text-xl md:text-2xl">
+        <nav className="space-y-8 lg:space-y-12 text-xl md:text-2xl">
           <Link
             href="/"
-            className={`flex items-center space-x-3 dark:hover:text-green-300 hover:text-green-500 ${isActive("/") ? "text-green-500 dark:text-green-300" : ""}`}
+            className={` flex items-center space-x-3 dark:hover:text-green-300 hover:text-green-500 ${isActive("/") ? "text-green-500 dark:text-green-300" : ""}`}
             onClick={toggleSidebar}
           >
-            <FaHome /> <span className="font-semibold">Home</span>
+            <FaHome/> <span className="font-semibold ">Home</span>
           </Link>
           <Link
             href="/about"
