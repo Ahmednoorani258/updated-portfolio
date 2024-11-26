@@ -2,6 +2,12 @@
 import React, { useState } from "react";
 import { projectData, ProjectDatatype } from "@/app/data/Projectdata";
 import ProjectCard from "@/components/ProjectCard";
+import { Metadata } from "next";
+
+export const metadata:Metadata = {
+  title:"Projects"
+} 
+
 
 const ProjectPage = () => {
   const [filter, setFilter] = useState<string>("all");

@@ -1,6 +1,10 @@
 "use client";
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaLinkedin, FaGithub } from "react-icons/fa";
+import { Metadata } from "next";
 
+export const metadata:Metadata = {
+  title:"Contact"
+} 
 
 export default function ContactPage() {
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
