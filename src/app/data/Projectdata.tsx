@@ -72,7 +72,7 @@ const projectData: ProjectDatatype[]  = [
     vercelLink: "https://nextjs-project-music-academy.vercel.app/",
   },
   {
-    image:"/CountDownTimer.jpg",
+    image:"/countdowntimer.png",
     id: 7,
     projectName: "COUNTDOWN TIMER",
     techStack: ["NEXT.JS","TypeScript", "TAILWINDCSS"],
