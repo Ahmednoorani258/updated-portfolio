@@ -14,7 +14,7 @@ export default function HeroSection() {
       <div className="absolute bottom-10 left-10 w-20 h-20 bg-purple-500 opacity-30 rounded-full animate-spin"></div>
 
       {/* Main Content */}
-      <div className="md:max-w-3xl md:pr-8 lg:xl">
+      <div className="lg:max-w-sm xl:max-w-3xl md:pr-8 lg:xl">
         <h6 className="text-gray-400 py-4 mt-12 text-2xl italic font-serif">
           hello!
         </h6>

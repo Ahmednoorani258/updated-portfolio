@@ -1,9 +1,19 @@
-import type { Metadata } from "next";
+
 import localFont from "next/font/local";
 import Sidebar from "@/components/Sidebar";
+import { Metadata } from "next";
 import WhatsappButton from "@/components/WhatsappButton";
 import "./globals.css";
 import MouseTrackingBackground from "@/components/MouseTrackingComponent";
+
+export const metadata:Metadata = {
+  title: {
+    default:"CodeAN-Portfolio",
+    template:"%s | CodeAN-Portfolio ",
+  },
+  description: "Developed by Ahmed Noorani",
+  icons:"/image.png"
+};
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -15,11 +25,6 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
   weight: "100 900",
 });
-
-export const metadata: Metadata = {
-  title: "Portfolio",
-  description: "Developed by Ahmed Noorani",
-};
 
 export default function RootLayout({
   children,
@@ -35,7 +40,7 @@ export default function RootLayout({
       <Sidebar />
 
       {/* Main Content Area */}
-      <main className="flex-grow min-h-screen overflow-y-auto text-black dark:text-white bg-gray-50 dark:bg-gray-900 transition-colors duration-300 ease-in-out  md:ml-72 lg:ml-80">
+      <main className="flex-grow min-h-screen overflow-y-auto text-black dark:text-white bg-gray-50 dark:bg-gray-900 transition-colors duration-300 ease-in-out lg:ml-72">
         {children}
         <WhatsappButton/>
       </main>

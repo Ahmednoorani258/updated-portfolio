@@ -6,7 +6,8 @@ const FeaturedProjects = () => {
    const FeaturedProjects = projectData.filter((project:projectCard ) => project.isFeatured);
 
  return (
-   <section className="py-12">
+   <div className="flex justify-center items-center">
+    <section className="py-12 max-w-7xl">
    <h2 className="text-3xl font-bold text-center mb-8 border-b-4 border-green-500 dark:border-green-300">
        Featured <span className="text-green-500 dark:text-green-300">Projects</span>
    </h2>
@@ -16,6 +17,7 @@ const FeaturedProjects = () => {
        ))}
    </div>
 </section>
+   </div>
  )
 };
 

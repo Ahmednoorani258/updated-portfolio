@@ -3,13 +3,13 @@ import React, { useState } from "react";
 import { projectData, ProjectDatatype } from "@/app/data/Projectdata";
 import ProjectCard from "@/components/ProjectCard";
 
+
 const ProjectPage = () => {
   const [filter, setFilter] = useState<string>("all");
 
   const filteredProjects = projectData.filter((project) => {
     if (filter === "featured") return project.isFeatured;
     if (filter === "cli") return project.interfaceType === "COMMAND LINE";
-    if (filter === "Python") return project.techStack.includes("Python");
     return true; // default to show all
   });
 
@@ -28,7 +28,7 @@ const ProjectPage = () => {
             className={`${
               filter === "all"
                 ? "text-green-500 dark:text-green-300 border-b-2 border-green-500 dark:border-green-300"
-                : "text-gray-400 dark:text-gray-400 hover:text-green-500 dark:hover:text-green-300"
+                : "text-gray-400 dark:text-gray-400 hover:text-white"
             } transition-all duration-300 focus:outline-none pb-2`}
           >
             All Projects
@@ -38,7 +38,7 @@ const ProjectPage = () => {
             className={`${
               filter === "featured"
                 ? "text-green-500 dark:text-green-300 border-b-2 border-green-500 dark:border-green-300"
-                : "text-gray-400 dark:text-gray-400 hover:text-green-500 dark:hover:text-green-300"
+                : "text-gray-400 dark:text-gray-400 hover:text-white"
             } transition-all duration-300 focus:outline-none pb-2`}
           >
             Featured
@@ -48,20 +48,10 @@ const ProjectPage = () => {
             className={`${
               filter === "cli"
                 ? "text-green-500 dark:text-green-300 border-b-2 border-green-500 dark:border-green-300"
-                : "text-gray-400 dark:text-gray-400 hover:text-green-500 dark:hover:text-green-300"
+                : "text-gray-800 dark:text-gray-400 hover:text-green-500 dark:hover:text-green-300"
             } transition-all duration-300 focus:outline-none pb-2`}
           >
             CLI Projects
-          </button>
-          <button
-            onClick={() => setFilter("Python")}
-            className={`${
-              filter === "Python"
-                ? "text-green-500 dark:text-green-300 border-b-2 border-green-500 dark:border-green-300"
-                : "text-gray-400 dark:text-gray-400 hover:text-green-500 dark:hover:text-green-300"
-            } transition-all duration-300 focus:outline-none pb-2`}
-          >
-            Python
           </button>
         </div>
 
@@ -74,21 +64,6 @@ const ProjectPage = () => {
       </section>
     </div>
   );
-
-import ProjectPage from "@/components/ProjectPage";
-import { Metadata } from "next";
-
-export const metadata:Metadata = {
-  title:"Projects"
-} 
-
-
-const ProjectPaage = () => {
- return(
-  <>
-  <ProjectPage/>
-  </>
- )
 };
 
-export default ProjectPaage;
+export default ProjectPage;

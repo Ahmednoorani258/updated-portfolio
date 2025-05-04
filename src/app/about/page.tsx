@@ -1,4 +1,10 @@
 import Image from "next/image";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About"
+}
+
 
 export default function AboutPage() {
   return (
@@ -53,6 +59,9 @@ export default function AboutPage() {
             { skill: "React", level: "75%" },
             { skill: "NextJs", level: "65%" },
             { skill: "Tailwind CSS", level: "90%" },
+            { skill: "Redux ToolKit", level: "75%" },
+            { skill: "Sanity", level: "80%" },
+            { skill: "Python", level: "80%"}
           ].map((skill, index) => (
             <div
               key={index}

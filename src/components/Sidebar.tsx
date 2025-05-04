@@ -17,7 +17,7 @@ import {
 
 export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   const pathname = usePathname();
 
@@ -59,18 +59,18 @@ export default function Sidebar() {
       {/* Mobile Toggle Button */}
       <button
         onClick={toggleSidebar}
-        className="md:hidden fixed top-4 left-4 z-50 text-gray-800 bg-green-500 dark:bg-green-300 rounded-full p-3 shadow-md"
+        className="lg:hidden fixed top-4 left-4 z-50 text-gray-800 bg-green-500 dark:bg-green-300 rounded-full p-3 shadow-md"
       >
         <FaBars size={20} className="text-white dark:text-gray-500" />
       </button>
 
       {/* Sidebar */}
       <aside
-        className={`fixed top-0 left-0 h-full w-64 md:w-72 lg:w-80 border-r border-green-500 dark:border-green-300 p-5 space-y-8 transform ${
+        className={`fixed top-0 left-0 h-full w-64 md:w-72 lg:w-72 border-r border-green-500 dark:border-green-300 p-5 space-y-8 transform ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         } 
           transition-transform duration-300 ease-in-out dark:bg-gray-800 dark:text-white bg-gray-200 text-black 
-          md:translate-x-0 md:static md:block z-40`}
+          lg:translate-x-0 lg:static lg:block z-40`}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
@@ -96,7 +96,7 @@ export default function Sidebar() {
         </div>
 
         {/* Navigation Links */}
-        <nav className="space-y-8 lg:space-y-12 text-xl md:text-2xl">
+        <nav className="space-y-8 flex flex-col justify-between text-xl md:text-2xl">
           <Link
             href="/"
             className={` flex items-center space-x-3 dark:hover:text-green-300 hover:text-green-500 ${isActive("/") ? "text-green-500 dark:text-green-300" : ""}`}
