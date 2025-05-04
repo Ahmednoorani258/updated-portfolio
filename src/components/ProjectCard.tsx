@@ -3,7 +3,7 @@ import { projectCard } from "@/app/data/Projectdata";
 
 export default function ProjectCard({ project }: { project: projectCard }) {
   return (
-    <div className="flex flex-col justify-between bg-white dark:bg-gray-800 shadow-md rounded-lg overflow-hidden hover:shadow-glow transition-shadow duration-300 border-t-4 border-green-500 dark:border-green-300">
+    <div className="flex flex-col justify-between bg-white dark:bg-gray-800  rounded-lg overflow-hidden shadow-glow hover:shadow-intenseGlow transition-shadow duration-300 border-t-4 border-green-500 dark:border-green-300">
       {/* Image Section */}
       {project.image ? (
         <Image
@@ -14,13 +14,13 @@ export default function ProjectCard({ project }: { project: projectCard }) {
           className="w-full h-48 object-cover transition-transform duration-300 hover:scale-105"
         />
       ) : (
-        <div className="w-full h-48 flex items-center justify-center bg-gray-200 dark:bg-gray-700 text-gray-500 dark:text-gray-300">
+        <div className="w-full h-48 flex items-center justify-center bg-gray-400 dark:bg-gray-700 text-gray-500 dark:text-gray-300">
           <p>No Image Available</p>
         </div>
       )}
 
       {/* Content Section */}
-      <div className="p-6 flex flex-col justify-between flex-grow">
+      <div className="p-6 flex flex-col justify-between flex-grow bg-gray-100 dark:bg-gray-800">
         {/* Title */}
         <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-100">
           {project.projectName}
@@ -31,7 +31,7 @@ export default function ProjectCard({ project }: { project: projectCard }) {
           {project.techStack.map((tech, index) => (
             <span
               key={index}
-              className="px-2 py-1 text-sm font-medium bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-full"
+              className="px-2 py-1 text-sm font-medium bg-green-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-full"
             >
               {tech}
             </span>

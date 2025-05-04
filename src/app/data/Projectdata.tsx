@@ -15,10 +15,10 @@ interface projectCard {
   vercelLink: string | null;
 }
 
-// Enum for interface types (Browser, Command Line)
+// Enum for interface types (Browser, Command_Line)
 enum InterfaceType {
   BROWSER = "BROWSER",
-  COMMAND_LINE = "COMMAND LINE",
+  COMMAND_LINE = "COMMAND_LINE",
 }
 
 // Interface for individual project data
@@ -49,7 +49,7 @@ const projectData: ProjectDatatype[] = [
   },
   {
     image: "/CarSellingWeb.jpg",
-    id: 5,
+    id: 2,
     projectName: "Car Selling WebSite",
     techStack: ["NEXT.Js", "TypeScript", "TAILWINDCSS"],
     interfaceType: InterfaceType.BROWSER,
@@ -61,7 +61,7 @@ const projectData: ProjectDatatype[] = [
   },
   {
     image: "/MusicAcademy.jpg",
-    id: 6,
+    id: 3,
     projectName: "MUSIC ACADEMY PROJECT",
     techStack: ["NEXT.Js", "TypeScript", "TAILWINDCSS", "ACETERNITY UI"],
     interfaceType: InterfaceType.BROWSER,
@@ -73,7 +73,7 @@ const projectData: ProjectDatatype[] = [
   },
   {
     image: "/countdowntimer.png",
-    id: 7,
+    id: 4,
     projectName: "COUNTDOWN TIMER",
     techStack: ["NEXT.JS", "TypeScript", "TAILWINDCSS"],
     interfaceType: InterfaceType.BROWSER,
@@ -85,19 +85,19 @@ const projectData: ProjectDatatype[] = [
   },
   {
     image: "/weatherapp.png",
-    id: 8,
+    id: 5,
     projectName: "WEATHER APP",
     techStack: ["NEXT.Js", "TypeScript", "TAILWINDCSS"],
     interfaceType: InterfaceType.BROWSER,
     level: ProjectLevel.HARD,
-    isFeatured: true,
+    isFeatured: false,
     githubLink:
       "https://github.com/Ahmednoorani258/30days-30projecTypeScript-nextJavaScript/tree/main/weather-app",
     vercelLink: "https://30days-30projecTypeScript-nextJavaScript.vercel.app/",
   },
   {
     image: "/functions.jpg",
-    id: 9,
+    id: 6,
     projectName: "CLI FUNCTIONS",
     techStack: ["TypeScript", "JavaScript"],
     interfaceType: InterfaceType.COMMAND_LINE,
@@ -108,7 +108,7 @@ const projectData: ProjectDatatype[] = [
   },
   {
     image: "/calculator.jpg",
-    id: 12,
+    id: 7,
     projectName: "MODERN CALCULATOR",
     techStack: ["HTML", "TAILWINDCSS"],
     interfaceType: InterfaceType.BROWSER,
@@ -119,7 +119,7 @@ const projectData: ProjectDatatype[] = [
   },
   {
     image: "/CLIMyBank.jpg",
-    id: 13,
+    id: 8,
     projectName: "CLI MY BANK",
     techStack: ["TypeScript", "JavaScript"],
     interfaceType: InterfaceType.COMMAND_LINE,
@@ -131,7 +131,7 @@ const projectData: ProjectDatatype[] = [
 
   {
     image: "/countdowntimer.png",
-    id: 15,
+    id: 9,
     projectName: "CLI COUNTDOWN TIMER",
     techStack: ["TypeScript", "JavaScript"],
     interfaceType: InterfaceType.COMMAND_LINE,
@@ -142,7 +142,7 @@ const projectData: ProjectDatatype[] = [
   },
   {
     image: "/quizapp.png",
-    id: 16,
+    id: 10,
     projectName: "CLI QUIZ APP",
     techStack: ["TypeScript", "JavaScript"],
     interfaceType: InterfaceType.COMMAND_LINE,
@@ -153,7 +153,7 @@ const projectData: ProjectDatatype[] = [
   },
   {
     image: "/spacegame.jpg",
-    id: 17,
+    id: 11,
     projectName: "CLI SPACE ADVENTURE GAME",
     techStack: ["TypeScript", "JavaScript"],
     interfaceType: InterfaceType.COMMAND_LINE,
@@ -164,7 +164,7 @@ const projectData: ProjectDatatype[] = [
   },
   {
     image: "/StudentManagmentSystem.jpg",
-    id: 18,
+    id: 12,
     projectName: "CLI STUDENT SYSTEM",
     techStack: ["TypeScript", "JavaScript"],
     interfaceType: InterfaceType.COMMAND_LINE,
@@ -175,7 +175,7 @@ const projectData: ProjectDatatype[] = [
   },
   {
     image: "/rockgame.jpg",
-    id: 19,
+    id: 13,
     projectName: "ROCK PAPER SCISSOR",
     techStack: ["HTML", "CSS", "JavaScript"],
     interfaceType: InterfaceType.BROWSER,
@@ -186,7 +186,7 @@ const projectData: ProjectDatatype[] = [
   },
   {
     image: "/wordcounter.png",
-    id: 20,
+    id: 14,
     projectName: "CLI WORD COUNTER",
     techStack: ["TypeScript", "JavaScript"],
     interfaceType: InterfaceType.COMMAND_LINE,
@@ -197,7 +197,7 @@ const projectData: ProjectDatatype[] = [
   },
   {
     image: "/atm.jpg",
-    id: 22,
+    id: 15,
     projectName: "CLI ATM",
     techStack: ["TypeScript", "JavaScript"],
     interfaceType: InterfaceType.COMMAND_LINE,
@@ -208,7 +208,7 @@ const projectData: ProjectDatatype[] = [
   },
   {
     image: "/todo.jpg",
-    id: 23,
+    id: 16,
     projectName: "CLI TODO APP",
     techStack: ["TypeScript", "JavaScript"],
     interfaceType: InterfaceType.COMMAND_LINE,
@@ -219,7 +219,7 @@ const projectData: ProjectDatatype[] = [
   },
   {
     image: "/ecommerceapp.png",
-    id: 24,
+    id: 17,
     projectName: "E-commerce app",
     techStack: ["NEXT.Js","TypeScript", "TAILWINDCSS", "ShadCn Ui"],
     interfaceType: InterfaceType.BROWSER,
@@ -230,7 +230,7 @@ const projectData: ProjectDatatype[] = [
   },
   {
     image: "/Furniro.png",
-    id: 25,
+    id: 18,
     projectName: "Furniro Web",
     techStack: ["NEXT.Js","TypeScript", "TAILWINDCSS", "ShadCn Ui"],
     interfaceType: InterfaceType.BROWSER,
@@ -242,7 +242,7 @@ const projectData: ProjectDatatype[] = [
 
   {
     image: "/unitconverter.png",
-    id: 24,
+    id: 19,
     projectName: "Unit Converter",
     techStack: ["Python"],
     interfaceType: InterfaceType.BROWSER,
@@ -253,8 +253,8 @@ const projectData: ProjectDatatype[] = [
     vercelLink: "https://unitconverterbyahmed.streamlit.app/",
   },
   {
-    image: "/passwordmeter.jpg",
-    id: 25,
+    image: "/passwordgenerator.png",
+    id: 20,
     projectName: "Password Strength Meter",
     techStack: ["Python"],
     interfaceType: InterfaceType.BROWSER,
@@ -265,8 +265,8 @@ const projectData: ProjectDatatype[] = [
     vercelLink: "https://passwordstrenghtmeterbyahmed.streamlit.app/",
   },
   {
-    image: "/exceltoword.jpg",
-    id: 26,
+    image: "/voucher generator.png",
+    id: 21,
     projectName: "Excel to Word Voucher",
     techStack: ["Python"],
     interfaceType: InterfaceType.BROWSER,
@@ -278,8 +278,8 @@ const projectData: ProjectDatatype[] = [
       "https://ahmednoorani258-exceltovoucherconverter-tqxjryqgz3f8c5hg2ygjzq.streamlit.app/",
   },
   {
-    image: "/dataviz.jpg",
-    id: 27,
+    image: "/dataDashboard.png",
+    id: 22,
     projectName: "Data Visualization Dashboard",
     techStack: ["Python"],
     interfaceType: InterfaceType.BROWSER,
@@ -290,8 +290,8 @@ const projectData: ProjectDatatype[] = [
     vercelLink: "https://titanic-data-dashboard.streamlit.app/",
   },
   {
-    image: "/examscore.jpg",
-    id: 28,
+    image: "/prediction demo.png",
+    id: 23,
     projectName: "Exam Score Predictor",
     techStack: ["Python"],
     interfaceType: InterfaceType.BROWSER,
@@ -302,8 +302,8 @@ const projectData: ProjectDatatype[] = [
     vercelLink: "https://exam-score-predict-by-study-hour.streamlit.app/",
   },
   {
-    image: "/dsplayground.jpg",
-    id: 29,
+    image: "/datastructureplayground.png",
+    id: 24,
     projectName: "Data Structure Playground",
     techStack: ["Python"],
     interfaceType: InterfaceType.BROWSER,
@@ -314,20 +314,20 @@ const projectData: ProjectDatatype[] = [
     vercelLink: "https://datastructureplayground.streamlit.app/",
   },
   {
-    image: "/webscrapper.jpg",
-    id: 30,
+    image: "/web scrapper.png",
+    id: 25,
     projectName: "Advanced Web Scraper",
     techStack: ["Python"],
     interfaceType: InterfaceType.BROWSER,
     level: ProjectLevel.MEDIUM,
-    isFeatured: false,
+    isFeatured: true,
     githubLink:
       "https://github.com/ahmednoorani258/30_days_chatgpt_challenge/blob/main/08_day_Build_Projects/projects/Advance_Web_Scrapper/main.py",
     vercelLink: "https://webscrapperbyahmed.streamlit.app/",
   },
   {
-    image: "/sentiment.jpg",
-    id: 31,
+    image: "/sentimentanalyzer.png",
+    id: 26,
     projectName: "Sentiment Analyzer",
     techStack: ["Python"],
     interfaceType: InterfaceType.BROWSER,
@@ -338,8 +338,8 @@ const projectData: ProjectDatatype[] = [
     vercelLink: "https://sentimentanalyzerbyahmed.streamlit.app/",
   },
   {
-    image: "/aiblog.jpg",
-    id: 32,
+    image: "/blow writer.png",
+    id: 27,
     projectName: "AI Blog Writer",
     techStack: ["Python"],
     interfaceType: InterfaceType.BROWSER,

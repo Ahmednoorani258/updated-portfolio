@@ -1,6 +1,6 @@
 export default function CAllToActionSec() {
     return (
-        <section className="bg-gray-100 dark:bg-gray-800 py-16">
+        <section className="bg-gray-200 dark:bg-gray-800 py-16">
         <div className="container mx-auto text-center">
           <h2 className="text-3xl font-semibold text-gray-800 dark:text-white">
             Let&apos;s Work Together!
