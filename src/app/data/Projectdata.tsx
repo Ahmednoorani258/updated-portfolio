@@ -7,7 +7,7 @@ enum ProjectLevel {
 
 interface projectCard {
   image: string | null;
-  id:number;
+  id: number;
   projectName: string;
   techStack: string[];
   isFeatured: boolean;
@@ -22,7 +22,7 @@ enum InterfaceType {
 }
 
 // Interface for individual project data
-interface ProjectDatatype  extends projectCard {
+interface ProjectDatatype extends projectCard {
   image: string | null;
   id: number;
   projectName: string;
@@ -35,7 +35,7 @@ interface ProjectDatatype  extends projectCard {
 }
 
 // Sample data array (with types)
-const projectData: ProjectDatatype[]  = [
+const projectData: ProjectDatatype[] = [
   {
     image: "/ResumeBuilder.jpg",
     id: 1,
@@ -48,10 +48,10 @@ const projectData: ProjectDatatype[]  = [
     vercelLink: "https://updated-hackathon.vercel.app/",
   },
   {
-    image:"/CarSellingWeb.jpg",
+    image: "/CarSellingWeb.jpg",
     id: 5,
     projectName: "Car Selling WebSite",
-    techStack: ["NEXT.Js","TypeScript", "TAILWINDCSS"],
+    techStack: ["NEXT.Js", "TypeScript", "TAILWINDCSS"],
     interfaceType: InterfaceType.BROWSER,
     level: ProjectLevel.HARD,
     isFeatured: true,
@@ -60,10 +60,10 @@ const projectData: ProjectDatatype[]  = [
     vercelLink: "https://carsellingclone.vercel.app/",
   },
   {
-    image:"/MusicAcademy.jpg",
+    image: "/MusicAcademy.jpg",
     id: 6,
     projectName: "MUSIC ACADEMY PROJECT",
-    techStack: ["NEXT.Js","TypeScript","TAILWINDCSS", "ACETERNITY UI"],
+    techStack: ["NEXT.Js", "TypeScript", "TAILWINDCSS", "ACETERNITY UI"],
     interfaceType: InterfaceType.BROWSER,
     level: ProjectLevel.HARD,
     isFeatured: true,
@@ -72,10 +72,10 @@ const projectData: ProjectDatatype[]  = [
     vercelLink: "https://nextjs-project-music-academy.vercel.app/",
   },
   {
-    image:"/countdowntimer.png",
+    image: "/countdowntimer.png",
     id: 7,
     projectName: "COUNTDOWN TIMER",
-    techStack: ["NEXT.JS","TypeScript", "TAILWINDCSS"],
+    techStack: ["NEXT.JS", "TypeScript", "TAILWINDCSS"],
     interfaceType: InterfaceType.BROWSER,
     level: ProjectLevel.MEDIUM,
     isFeatured: true,
@@ -84,10 +84,10 @@ const projectData: ProjectDatatype[]  = [
     vercelLink: "https://countdown-timer-five-tan.vercel.app/",
   },
   {
-    image:"/weatherapp.png",
+    image: "/weatherapp.png",
     id: 8,
     projectName: "WEATHER APP",
-    techStack: ["NEXT.Js","TypeScript", "TAILWINDCSS"],
+    techStack: ["NEXT.Js", "TypeScript", "TAILWINDCSS"],
     interfaceType: InterfaceType.BROWSER,
     level: ProjectLevel.HARD,
     isFeatured: false,
@@ -96,7 +96,7 @@ const projectData: ProjectDatatype[]  = [
     vercelLink: "https://30days-30projecTypeScript-nextJavaScript.vercel.app/",
   },
   {
-    image:"/functions.jpg",
+    image: "/functions.jpg",
     id: 9,
     projectName: "CLI FUNCTIONS",
     techStack: ["TypeScript", "JavaScript"],
@@ -107,7 +107,7 @@ const projectData: ProjectDatatype[]  = [
     vercelLink: null,
   },
   {
-    image:"/calculator.jpg",
+    image: "/calculator.jpg",
     id: 12,
     projectName: "MODERN CALCULATOR",
     techStack: ["HTML", "TAILWINDCSS"],
@@ -118,7 +118,7 @@ const projectData: ProjectDatatype[]  = [
     vercelLink: "https://modern-calculator-delta.vercel.app/",
   },
   {
-    image:"/CLIMyBank.jpg",
+    image: "/CLIMyBank.jpg",
     id: 13,
     projectName: "CLI MY BANK",
     techStack: ["TypeScript", "JavaScript"],
@@ -130,7 +130,7 @@ const projectData: ProjectDatatype[]  = [
   },
 
   {
-    image:"/countdowntimer.png",
+    image: "/countdowntimer.png",
     id: 15,
     projectName: "CLI COUNTDOWN TIMER",
     techStack: ["TypeScript", "JavaScript"],
@@ -141,7 +141,7 @@ const projectData: ProjectDatatype[]  = [
     vercelLink: null,
   },
   {
-    image:"/quizapp.png",
+    image: "/quizapp.png",
     id: 16,
     projectName: "CLI QUIZ APP",
     techStack: ["TypeScript", "JavaScript"],
@@ -152,7 +152,7 @@ const projectData: ProjectDatatype[]  = [
     vercelLink: null,
   },
   {
-    image:"/spacegame.jpg",
+    image: "/spacegame.jpg",
     id: 17,
     projectName: "CLI SPACE ADVENTURE GAME",
     techStack: ["TypeScript", "JavaScript"],
@@ -163,7 +163,7 @@ const projectData: ProjectDatatype[]  = [
     vercelLink: null,
   },
   {
-    image:"/StudentManagmentSystem.jpg",
+    image: "/StudentManagmentSystem.jpg",
     id: 18,
     projectName: "CLI STUDENT SYSTEM",
     techStack: ["TypeScript", "JavaScript"],
@@ -174,7 +174,7 @@ const projectData: ProjectDatatype[]  = [
     vercelLink: null,
   },
   {
-    image:"/rockgame.jpg",
+    image: "/rockgame.jpg",
     id: 19,
     projectName: "ROCK PAPER SCISSOR",
     techStack: ["HTML", "CSS", "JavaScript"],
@@ -185,7 +185,7 @@ const projectData: ProjectDatatype[]  = [
     vercelLink: "https://rock-papper-scissor-gam.vercel.app/",
   },
   {
-    image:"/wordcounter.png",
+    image: "/wordcounter.png",
     id: 20,
     projectName: "CLI WORD COUNTER",
     techStack: ["TypeScript", "JavaScript"],
@@ -196,7 +196,7 @@ const projectData: ProjectDatatype[]  = [
     vercelLink: null,
   },
   {
-    image:"/atm.jpg",
+    image: "/atm.jpg",
     id: 22,
     projectName: "CLI ATM",
     techStack: ["TypeScript", "JavaScript"],
@@ -207,7 +207,7 @@ const projectData: ProjectDatatype[]  = [
     vercelLink: null,
   },
   {
-    image:"/todo.jpg",
+    image: "/todo.jpg",
     id: 23,
     projectName: "CLI TODO APP",
     techStack: ["TypeScript", "JavaScript"],
@@ -216,6 +216,117 @@ const projectData: ProjectDatatype[]  = [
     isFeatured: false,
     githubLink: "https://github.com/Ahmednoorani258/CLI_Todo_App",
     vercelLink: null,
+  },
+
+  {
+    image: "/unitconverter.png",
+    id: 24,
+    projectName: "Unit Converter",
+    techStack: ["Python"],
+    interfaceType: InterfaceType.BROWSER,
+    level: ProjectLevel.EASY,
+    isFeatured: false,
+    githubLink:
+      "https://github.com/ahmednoorani258/quartr-3-assignments/blob/main/01-unit-converter/app.py",
+    vercelLink: "https://unitconverterbyahmed.streamlit.app/",
+  },
+  {
+    image: "/passwordmeter.jpg",
+    id: 25,
+    projectName: "Password Strength Meter",
+    techStack: ["Python"],
+    interfaceType: InterfaceType.BROWSER,
+    level: ProjectLevel.EASY,
+    isFeatured: false,
+    githubLink:
+      "https://github.com/ahmednoorani258/quartr-3-assignments/blob/main/02-password-strenght-meter/main.py",
+    vercelLink: "https://passwordstrenghtmeterbyahmed.streamlit.app/",
+  },
+  {
+    image: "/exceltoword.jpg",
+    id: 26,
+    projectName: "Excel to Word Voucher",
+    techStack: ["Python"],
+    interfaceType: InterfaceType.BROWSER,
+    level: ProjectLevel.MEDIUM,
+    isFeatured: false,
+    githubLink:
+      "https://github.com/ahmednoorani258/ahmednoorani258-excel_to_voucher_converter/blob/main/app.py",
+    vercelLink:
+      "https://ahmednoorani258-exceltovoucherconverter-tqxjryqgz3f8c5hg2ygjzq.streamlit.app/",
+  },
+  {
+    image: "/dataviz.jpg",
+    id: 27,
+    projectName: "Data Visualization Dashboard",
+    techStack: ["Python"],
+    interfaceType: InterfaceType.BROWSER,
+    level: ProjectLevel.MEDIUM,
+    isFeatured: false,
+    githubLink:
+      "https://github.com/ahmednoorani258/30_days_chatgpt_challenge/blob/main/11_ML_libs_and_Data_Visualization/04_data_viualization_dashboard/main.py",
+    vercelLink: "https://titanic-data-dashboard.streamlit.app/",
+  },
+  {
+    image: "/examscore.jpg",
+    id: 28,
+    projectName: "Exam Score Predictor",
+    techStack: ["Python"],
+    interfaceType: InterfaceType.BROWSER,
+    level: ProjectLevel.MEDIUM,
+    isFeatured: false,
+    githubLink:
+      "https://github.com/ahmednoorani258/30_days_chatgpt_challenge/blob/main/10_Intro_To_Machine_Learning/07_streamlit_app_exam_score/main.py",
+    vercelLink: "https://exam-score-predict-by-study-hour.streamlit.app/",
+  },
+  {
+    image: "/dsplayground.jpg",
+    id: 29,
+    projectName: "Data Structure Playground",
+    techStack: ["Python"],
+    interfaceType: InterfaceType.BROWSER,
+    level: ProjectLevel.MEDIUM,
+    isFeatured: false,
+    githubLink:
+      "https://github.com/ahmednoorani258/30_days_chatgpt_challenge/blob/main/09_Data_Structure_Playground/main.py",
+    vercelLink: "https://datastructureplayground.streamlit.app/",
+  },
+  {
+    image: "/webscrapper.jpg",
+    id: 30,
+    projectName: "Advanced Web Scraper",
+    techStack: ["Python"],
+    interfaceType: InterfaceType.BROWSER,
+    level: ProjectLevel.MEDIUM,
+    isFeatured: false,
+    githubLink:
+      "https://github.com/ahmednoorani258/30_days_chatgpt_challenge/blob/main/08_day_Build_Projects/projects/Advance_Web_Scrapper/main.py",
+    vercelLink: "https://webscrapperbyahmed.streamlit.app/",
+  },
+  {
+    image: "/sentiment.jpg",
+    id: 31,
+    projectName: "Sentiment Analyzer",
+    techStack: ["Python"],
+    interfaceType: InterfaceType.BROWSER,
+    level: ProjectLevel.MEDIUM,
+    isFeatured: false,
+    githubLink:
+      "https://github.com/Ahmednoorani258/30_days_chatgpt_challenge/tree/main/18_Experiiment_with_hugging_face/05_Text_news_Summarizer",
+    vercelLink: "https://sentimentanalyzerbyahmed.streamlit.app/",
+  },
+  {
+    image: "/aiblog.jpg",
+    id: 32,
+    projectName: "AI Blog Writer",
+    techStack: ["Python"],
+    interfaceType: InterfaceType.BROWSER,
+    level: ProjectLevel.MEDIUM,
+    isFeatured: false,
+    githubLink:
+      "https://github.com/Ahmednoorani258/30_days_chatgpt_challenge/tree/main/28_Portfolio_Plaan",
+    vercelLink:
+      "https://30dayschatgptchallenge-rnkp2dqnh6cezfrc3zsfiz.streamlit.app/",
   },
 ];
 
