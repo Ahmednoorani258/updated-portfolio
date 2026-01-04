@@ -5,6 +5,7 @@ import { Metadata } from "next";
 import WhatsappButton from "@/components/WhatsappButton";
 import "./globals.css";
 import MouseTrackingBackground from "@/components/MouseTrackingComponent";
+import TubesCursor from "@/components/TubeCursorEffect"
 
 export const metadata:Metadata = {
   title: {
@@ -35,6 +36,8 @@ export default function RootLayout({
     <html lang="en">
   <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
     <MouseTrackingBackground />
+    {/* <TubesCursor/> */}
+    
     <div className="flex">
       {/* Sidebar */}
       <Sidebar />
