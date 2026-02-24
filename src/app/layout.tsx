@@ -5,7 +5,6 @@ import { Metadata } from "next";
 import WhatsappButton from "@/components/WhatsappButton";
 import "./globals.css";
 import MouseTrackingBackground from "@/components/MouseTrackingComponent";
-import TubesCursor from "@/components/TubeCursorEffect"
 
 export const metadata:Metadata = {
   title: {
@@ -33,17 +32,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
   <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
     <MouseTrackingBackground />
-    {/* <TubesCursor/> */}
-    
     <div className="flex">
       {/* Sidebar */}
       <Sidebar />
 
       {/* Main Content Area */}
-      <main className="flex-grow min-h-screen overflow-y-auto text-black dark:text-white bg-gray-50 dark:bg-gray-900 transition-colors duration-300 ease-in-out lg:ml-72">
+      <main className="flex-grow min-h-screen overflow-y-auto transition-colors duration-300 ease-in-out lg:ml-72" style={{ color: "var(--foreground)", background: "var(--background)" }}>
         {children}
         <WhatsappButton/>
       </main>

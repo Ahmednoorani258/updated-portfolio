@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import {  usePathname} from "next/navigation"; // Ensure this is the correct import based on your setup
+import { usePathname } from "next/navigation";
 import {
   FaHome,
   FaUser,
@@ -13,152 +13,176 @@ import {
   FaMoon,
   FaSun,
   FaBars,
+  FaTimes,
 } from "react-icons/fa";
+
+const navLinks = [
+  { href: "/", icon: FaHome, label: "Home" },
+  { href: "/about", icon: FaUser, label: "About" },
+  { href: "/services", icon: FaTools, label: "Services" },
+  { href: "/projects", icon: FaProjectDiagram, label: "Projects" },
+  { href: "/contact", icon: FaEnvelope, label: "Contact" },
+];
 
 export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(true);
-
+  const [isDarkMode, setIsDarkMode] = useState(true); // default: dark
   const pathname = usePathname();
 
-  const toggleSidebar = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const toggleDarkMode = (event: React.MouseEvent) => {
-    event.stopPropagation();
-    setIsDarkMode(!isDarkMode);
-  };
-
-  // Persist dark mode preference in localStorage
   useEffect(() => {
-    const savedMode = localStorage.getItem("darkMode");
-    if (savedMode) {
-      setIsDarkMode(JSON.parse(savedMode));
+    const saved = localStorage.getItem("darkMode");
+    // Only override default if user has explicitly toggled before
+    if (saved !== null) {
+      setIsDarkMode(JSON.parse(saved));
+    } else {
+      // First visit: force dark mode and persist it
+      localStorage.setItem("darkMode", JSON.stringify(true));
     }
   }, []);
 
   useEffect(() => {
-    if (isDarkMode) {
-      document.body.classList.add("dark");
-      document.documentElement.classList.add("dark");
-    } else {
-      document.body.classList.remove("dark");
-      document.documentElement.classList.remove("dark");
-    }
+    document.documentElement.classList.toggle("dark", isDarkMode);
     localStorage.setItem("darkMode", JSON.stringify(isDarkMode));
   }, [isDarkMode]);
 
-  // Function to check if the current link is active
-  const isActive = (path: string) => {
-    return pathname === path;
-  };
+  const close = () => setIsOpen(false);
 
   return (
-    <div className="z-10 flex h-full fixed dark:bg-gray-900 dark:text-white bg-white text-black">
-      {/* Mobile Toggle Button */}
+    <div className="z-40 flex h-full fixed">
+      {/* Mobile hamburger */}
       <button
-        onClick={toggleSidebar}
-        className="lg:hidden fixed top-4 left-4 z-50 text-gray-800 bg-green-500 dark:bg-green-300 rounded-full p-3 shadow-md"
+        onClick={() => setIsOpen(true)}
+        className="lg:hidden fixed top-4 left-4 z-50 p-2.5 rounded-xl bg-green-500/10 border border-green-500/30 text-green-500 hover:bg-green-500/20 transition-all"
+        aria-label="Open menu"
       >
-        <FaBars size={20} className="text-white dark:text-gray-500" />
+        <FaBars size={18} />
       </button>
 
       {/* Sidebar */}
       <aside
-        className={`fixed top-0 left-0 h-full w-64 md:w-72 lg:w-72 border-r border-green-500 dark:border-green-300 p-5 space-y-8 transform ${
-          isOpen ? "translate-x-0" : "-translate-x-full"
-        } 
-          transition-transform duration-300 ease-in-out dark:bg-gray-800 dark:text-white bg-gray-200 text-black 
-          lg:translate-x-0 lg:static lg:block z-40`}
+        className={`fixed top-0 left-0 h-full w-72 flex flex-col glass-sidebar
+          border-r border-green-500/10 dark:border-green-500/10
+          transform transition-transform duration-300 ease-in-out z-40
+          ${isOpen ? "translate-x-0" : "-translate-x-full"} lg:translate-x-0`}
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Header */}
-        <div className="flex items-center justify-between mb-4">
-          <h1 className="text-2xl font-bold mt-16">
-            Code<span className="text-green-500 dark:text-green-300">AN</span>
-          </h1>
-          <button onClick={toggleSidebar} className="md:hidden text-2xl">
-            &times;
-          </button>
-        </div>
+        {/* Top green accent line */}
+        <div className="h-0.5 w-full bg-gradient-to-r from-transparent via-green-500 to-transparent" />
 
-        {/* Dark Mode Toggle */}
-        <div className="flex items-center justify-between mb-4">
-          <span className="font-semibold">Dark Mode</span>
-          <button onClick={toggleDarkMode} className="text-xl">
-            {isDarkMode ? (
-              <FaSun className="text-yellow-400" />
-            ) : (
-              <FaMoon className="text-gray-700" />
-            )}
-          </button>
-        </div>
+        <div className="flex flex-col h-full px-6 py-8 overflow-y-auto">
+          {/* Logo + close */}
+          <div className="flex items-center justify-between mb-10">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-green-500 flex items-center justify-center shadow-glow">
+                <span className="text-white font-bold text-sm tracking-tight">AN</span>
+              </div>
+              <div>
+                <p className="font-bold text-gray-900 dark:text-white leading-none">
+                  Code<span className="text-green-500">AN</span>
+                </p>
+                <p className="text-[10px] text-gray-500 dark:text-gray-400 mt-0.5">
+                  Portfolio
+                </p>
+              </div>
+            </div>
+            <button
+              onClick={close}
+              className="lg:hidden p-1.5 rounded-lg hover:bg-gray-200 dark:hover:bg-white/10 transition-colors text-gray-500"
+            >
+              <FaTimes size={16} />
+            </button>
+          </div>
 
-        {/* Navigation Links */}
-        <nav className="space-y-8 flex flex-col justify-between text-xl md:text-2xl">
-          <Link
-            href="/"
-            className={` flex items-center space-x-3 dark:hover:text-green-300 hover:text-green-500 ${isActive("/") ? "text-green-500 dark:text-green-300" : ""}`}
-            onClick={toggleSidebar}
-          >
-            <FaHome/> <span className="font-semibold ">Home</span>
-          </Link>
-          <Link
-            href="/about"
-            className={`flex items-center space-x-3 dark:hover:text-green-300 hover:text-green-500 ${isActive("/about") ? "text-green-500 dark:text-green-300" : ""}`}
-            onClick={toggleSidebar}
-          >
-            <FaUser /> <span className="font-semibold">About</span>
-          </Link>
-          <Link
-            href="/services"
-            className={`flex items-center space-x-3 dark:hover:text-green-300 hover:text-green-500 ${isActive("/services") ? "text-green-500 dark:text-green-300" : ""}`}
-            onClick={toggleSidebar}
-          >
-            <FaTools /> <span className="font-semibold">Services</span>
-          </Link>
-          <Link
-            href="/projects"
-            className={`flex items-center space-x-3 dark:hover:text-green-300 hover:text-green-500 ${isActive("/projects") ? "text-green-500 dark:text-green-300" : ""}`}
-            onClick={toggleSidebar}
-          >
-            <FaProjectDiagram /> <span className="font-semibold">Projects</span>
-          </Link>
-          <Link
-            href="/contact"
-            className={`flex items-center space-x-3 dark:hover:text-green-300 hover:text-green-500 ${isActive("/contact") ? "text-green-500 dark:text-green-300" : ""}`}
-            onClick={toggleSidebar}
-          >
-            <FaEnvelope /> <span className="font-semibold">Contact</span>
-          </Link>
-        </nav>
+          {/* Nav links */}
+          <nav className="flex flex-col gap-1 flex-1">
+            {navLinks.map(({ href, icon: Icon, label }) => {
+              const active = pathname === href;
+              return (
+                <Link
+                  key={href}
+                  href={href}
+                  onClick={close}
+                  className={`group relative flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200
+                    ${active
+                      ? "bg-green-500/10 text-green-500 dark:text-green-400"
+                      : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/5"
+                    }`}
+                >
+                  {active && (
+                    <span className="absolute left-0 top-1/2 -translate-y-1/2 w-0.5 h-5 bg-green-500 rounded-full" />
+                  )}
+                  <Icon size={16} className={active ? "text-green-500" : "text-gray-400 group-hover:text-green-500 transition-colors"} />
+                  {label}
+                </Link>
+              );
+            })}
+          </nav>
 
-        {/* Social Media Links */}
-        <div className="flex justify-center space-x-4 mt-12 py-4 border-b border-green-500 dark:border-green-300">
-          <Link
-            href="https://www.linkedin.com/in/mahmednorani/"
-            target="_blank"
-            className="hover:text-green-500 dark:hover:text-green-300"
-          >
-            <FaLinkedin size={20} />
-          </Link>
-          <Link
-            href="https://github.com/Ahmednoorani258"
-            target="_blank"
-            className="hover:text-green-500 dark:hover:text-green-300"
-          >
-            <FaGithub size={20} />
-          </Link>
+          {/* Dark mode toggle */}
+          <div className="mt-6 pt-6 border-t border-gray-200 dark:border-white/10">
+            <div className="flex items-center justify-between px-2">
+              <span className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                {isDarkMode ? "Dark" : "Light"} Mode
+              </span>
+              <button
+                onClick={() => setIsDarkMode(!isDarkMode)}
+                className={`relative w-12 h-6 rounded-full transition-colors duration-300
+                  ${isDarkMode ? "bg-green-500" : "bg-gray-300"}`}
+                aria-label="Toggle dark mode"
+              >
+                <span
+                  className={`absolute top-0.5 left-0.5 w-5 h-5 rounded-full bg-white shadow-sm
+                    flex items-center justify-center transition-transform duration-300
+                    ${isDarkMode ? "translate-x-6" : "translate-x-0"}`}
+                >
+                  {isDarkMode
+                    ? <FaSun size={10} className="text-green-500" />
+                    : <FaMoon size={10} className="text-gray-400" />
+                  }
+                </span>
+              </button>
+            </div>
+
+            {/* Social links */}
+            <div className="flex items-center gap-3 mt-5 px-2">
+              <Link
+                href="https://www.linkedin.com/in/mahmednorani/"
+                target="_blank"
+                className="flex-1 flex items-center justify-center py-2.5 rounded-xl bg-gray-100 dark:bg-white/5 text-gray-500 dark:text-gray-400 hover:bg-blue-500/10 hover:text-blue-500 transition-all duration-200 hover:-translate-y-0.5"
+              >
+                <FaLinkedin size={18} />
+              </Link>
+              <Link
+                href="https://github.com/Ahmednoorani258"
+                target="_blank"
+                className="flex-1 flex items-center justify-center py-2.5 rounded-xl bg-gray-100 dark:bg-white/5 text-gray-500 dark:text-gray-400 hover:bg-gray-800/10 dark:hover:bg-white/10 hover:text-gray-900 dark:hover:text-white transition-all duration-200 hover:-translate-y-0.5"
+              >
+                <FaGithub size={18} />
+              </Link>
+            </div>
+
+            {/* Availability badge */}
+            <div className="mt-5 px-2">
+              <div className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl bg-green-500/8 border border-green-500/20">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
+                </span>
+                <span className="text-xs font-medium text-green-600 dark:text-green-400">
+                  Available for work
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
       </aside>
 
-      {/* Overlay for Mobile */}
+      {/* Mobile overlay */}
       {isOpen && (
         <div
-          onClick={toggleSidebar}
-          className="fixed inset-0 bg-black opacity-50 md:hidden z-30"
-        ></div>
+          onClick={close}
+          className="fixed inset-0 bg-black/60 backdrop-blur-sm lg:hidden z-30"
+        />
       )}
     </div>
   );

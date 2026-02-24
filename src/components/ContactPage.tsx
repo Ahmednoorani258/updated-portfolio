@@ -40,14 +40,15 @@ async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
   }
 
   return (
-    <div className="bg-gray-50 dark:bg-gray-900 min-h-screen py-16 px-6">
+    <div className="min-h-screen py-16 px-6" style={{ background: "var(--background)" }}>
       <div className="container mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-extrabold text-gray-800 dark:text-white mb-4">
-            Get in <span className="text-green-500 dark:text-green-300">Touch</span>
+          <h1 className="text-4xl font-extrabold mb-4" style={{ color: "var(--foreground)" }}>
+            Get in{" "}
+            <span className="gradient-text">Touch</span>
           </h1>
-          <p className="text-lg text-gray-600 dark:text-gray-300">
+          <p className="text-lg" style={{ color: "var(--muted)" }}>
             I&apos;d love to hear from you! Feel free to reach out anytime.
           </p>
         </div>
@@ -56,43 +57,38 @@ async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
           {/* Contact Info & Map */}
           <div className="space-y-8">
             {/* Contact Details */}
-            <div className="bg-white dark:bg-gray-800 shadow-2xl rounded-lg p-8">
-              <h2 className="text-2xl font-semibold text-gray-800 dark:text-white mb-4">
+            <div className="rounded-xl p-8" style={{ background: "var(--surface)", border: "1px solid var(--border)" }}>
+              <h2 className="text-2xl font-semibold mb-4" style={{ color: "var(--foreground)" }}>
                 Contact Information
               </h2>
               <ul className="space-y-4">
                 <li className="flex items-center">
-                  <FaPhone className="text-green-500 dark:text-green-300 mr-4" />
-                  <span className="text-gray-600 dark:text-gray-300">
-                    +92 (335) 379-1610
-                  </span>
+                  <FaPhone className="text-green-500 mr-4 shrink-0" />
+                  <span style={{ color: "var(--muted)" }}>+92 (329) 224-1747</span>
                 </li>
                 <li className="flex items-center">
-                  <FaEnvelope className="text-green-500 dark:text-green-300 mr-4" />
-                  <span className="text-gray-600 dark:text-gray-300">
-                    ahmednoorani258@gmail.com
-                  </span>
+                  <FaEnvelope className="text-green-500 mr-4 shrink-0" />
+                  <span style={{ color: "var(--muted)" }}>ahmednoorani258@gmail.com</span>
                 </li>
                 <li className="flex items-center">
-                  <FaMapMarkerAlt className="text-green-500 dark:text-green-300 mr-4" />
-                  <span className="text-gray-600 dark:text-gray-300">
-                    Karachi, Pakistan
-                  </span>
+                  <FaMapMarkerAlt className="text-green-500 mr-4 shrink-0" />
+                  <span style={{ color: "var(--muted)" }}>Karachi, Pakistan</span>
                 </li>
               </ul>
             </div>
 
             {/* Social Links */}
-            <div className="bg-white dark:bg-gray-800 shadow-2xl rounded-lg p-8">
-              <h2 className="text-2xl font-semibold text-gray-800 dark:text-white mb-4">
+            <div className="rounded-xl p-8" style={{ background: "var(--surface)", border: "1px solid var(--border)" }}>
+              <h2 className="text-2xl font-semibold mb-4" style={{ color: "var(--foreground)" }}>
                 Follow Me
               </h2>
-              <div className="flex space-x-4 text-2xl">
+              <div className="flex space-x-3 text-2xl">
                 <a
                   href="https://www.linkedin.com/in/mahmednorani/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-green-500 dark:text-gray-300 dark:hover:text-green-300 transition duration-300"
+                  className="flex items-center justify-center w-10 h-10 rounded-lg transition duration-300 hover:text-green-500"
+                  style={{ background: "var(--surface-hover)", color: "var(--muted)", border: "1px solid var(--border)" }}
                 >
                   <FaLinkedin />
                 </a>
@@ -100,7 +96,8 @@ async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
                   href="https://github.com/Ahmednoorani258"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-green-500 dark:text-gray-300 dark:hover:text-green-300 transition duration-300"
+                  className="flex items-center justify-center w-10 h-10 rounded-lg transition duration-300 hover:text-green-500"
+                  style={{ background: "var(--surface-hover)", color: "var(--muted)", border: "1px solid var(--border)" }}
                 >
                   <FaGithub />
                 </a>
@@ -108,7 +105,7 @@ async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
             </div>
 
             {/* Map */}
-            <div className="overflow-hidden rounded-lg shadow-2xl">
+            <div className="overflow-hidden rounded-xl" style={{ border: "1px solid var(--border)" }}>
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3619.325928352286!2d67.05016657559597!3d24.88686184420016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33ef0aaf3bb6d%3A0x683dfc78735028ab!2sJamshed%20Rd%2C%20Government%20Quarters%20Jail%20Road%2C%20Karachi%2C%20Karachi%20City%2C%20Sindh%2C%20Pakistan!5e0!3m2!1sen!2s!4v1731997029414!5m2!1sen!2s"
                 width="100%"
@@ -116,52 +113,44 @@ async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
                 allowFullScreen={true}
                 aria-hidden="false"
                 tabIndex={0}
-                className="rounded-lg"
               ></iframe>
             </div>
           </div>
 
           {/* Contact Form */}
-          <div className="bg-white dark:bg-gray-800 shadow-2xl rounded-lg p-8">
-            <h2 className="text-2xl font-semibold text-gray-800 dark:text-white mb-4">
+          <div className="rounded-xl p-8" style={{ background: "var(--surface)", border: "1px solid var(--border)" }}>
+            <h2 className="text-2xl font-semibold mb-6" style={{ color: "var(--foreground)" }}>
               Send a Message
             </h2>
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-5">
               <div>
-                <label
-                  htmlFor="name"
-                  className="block text-gray-600 dark:text-gray-300 font-medium mb-1"
-                >
+                <label htmlFor="name" className="block text-sm font-medium mb-1.5" style={{ color: "var(--muted)" }}>
                   Your Name
                 </label>
                 <input
                   type="text"
                   id="name"
                   name="name"
-                  className="w-full bg-gray-50 dark:bg-gray-700 text-gray-800 dark:text-gray-200 border border-gray-300 dark:border-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+                  className="w-full rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition"
+                  style={{ background: "var(--surface-hover)", color: "var(--foreground)", border: "1px solid var(--border)" }}
                   required
                 />
               </div>
               <div>
-                <label
-                  htmlFor="email"
-                  className="block text-gray-600 dark:text-gray-300 font-medium mb-1"
-                >
+                <label htmlFor="email" className="block text-sm font-medium mb-1.5" style={{ color: "var(--muted)" }}>
                   Email Address
                 </label>
                 <input
                   type="email"
                   id="email"
                   name="email"
-                  className="w-full bg-gray-50 dark:bg-gray-700 text-gray-800 dark:text-gray-200 border border-gray-300 dark:border-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+                  className="w-full rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition"
+                  style={{ background: "var(--surface-hover)", color: "var(--foreground)", border: "1px solid var(--border)" }}
                   required
                 />
               </div>
               <div>
-                <label
-                  htmlFor="message"
-                  className="block text-gray-600 dark:text-gray-300 font-medium mb-1"
-                >
+                <label htmlFor="message" className="block text-sm font-medium mb-1.5" style={{ color: "var(--muted)" }}>
                   Message
                 </label>
                 <textarea
@@ -169,13 +158,14 @@ async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
                   name="message"
                   draggable="false"
                   rows={6}
-                  className="w-full bg-gray-50 dark:bg-gray-700 text-gray-800 dark:text-gray-200 border border-gray-300 dark:border-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+                  className="w-full rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition resize-none"
+                  style={{ background: "var(--surface-hover)", color: "var(--foreground)", border: "1px solid var(--border)" }}
                   required
                 ></textarea>
               </div>
               <button
                 type="submit"
-                className="w-full bg-green-500 hover:bg-green-600 text-white text-lg font-bold py-3 rounded-lg transition duration-300"
+                className="w-full bg-green-500 hover:bg-green-600 text-white text-sm font-semibold py-3 rounded-lg transition duration-300 hover:-translate-y-0.5"
               >
                 Send Message
               </button>

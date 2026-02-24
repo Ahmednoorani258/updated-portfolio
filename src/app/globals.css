@@ -2,39 +2,160 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ── Design tokens ── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --surface: #ffffff;
+  --surface-hover: #f1f5f9;
+  --border: rgba(15, 23, 42, 0.08);
+  --border-subtle: rgba(15, 23, 42, 0.05);
+  --muted: #64748b;
+  --muted-foreground: #94a3b8;
+  --accent: #22c55e;
+  --accent-muted: rgba(34, 197, 94, 0.10);
+  --sidebar-bg: rgba(255, 255, 255, 0.92);
+  --card-bg: rgba(255, 255, 255, 0.80);
+  --glass-border: rgba(15, 23, 42, 0.08);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.dark {
+  --background: #080b10;
+  --foreground: #f1f5f9;
+  --surface: #0f1318;
+  --surface-hover: #161b24;
+  --border: rgba(255, 255, 255, 0.07);
+  --border-subtle: rgba(255, 255, 255, 0.04);
+  --muted: #94a3b8;
+  --muted-foreground: #64748b;
+  --accent: #22c55e;
+  --accent-muted: rgba(34, 197, 94, 0.10);
+  --sidebar-bg: rgba(8, 11, 16, 0.94);
+  --card-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.07);
+}
+
+/* ── Base ── */
+html {
+  scroll-behavior: smooth;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Inter", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: rgba(34, 197, 94, 0.35);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(34, 197, 94, 0.6); }
+
+/* ── Components ── */
+@layer components {
+
+  /* Glass card — works in both themes */
+  .glass {
+    background: var(--card-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
   }
-} */
 
-html,
-body {
-  margin: 0;
-  height: 100%;
-  width: 100%;
-  touch-action: none;
+  /* Sidebar glass */
+  .glass-sidebar {
+    background: var(--sidebar-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  /* Gradient green text */
+  .gradient-text {
+    background: linear-gradient(135deg, #16a34a 0%, #22c55e 50%, #4ade80 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Light theme: slightly brighter gradient so it reads on white */
+  :root .gradient-text {
+    background: linear-gradient(135deg, #15803d 0%, #16a34a 40%, #22c55e 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Subtle grid background */
+  .hero-grid-bg {
+    background-image:
+      linear-gradient(var(--border-subtle) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border-subtle) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  /* Surface card */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+  }
+  .card:hover {
+    border-color: rgba(34, 197, 94, 0.25);
+  }
+
+  /* Primary button */
+  .btn-primary {
+    @apply relative inline-flex items-center gap-2 px-7 py-3.5 rounded-xl
+           font-semibold text-sm bg-green-600 text-white overflow-hidden
+           transition-all duration-300
+           hover:bg-green-700 hover:shadow-intenseGlow hover:-translate-y-0.5
+           active:translate-y-0;
+  }
+  .dark .btn-primary {
+    @apply bg-green-500 hover:bg-green-600;
+  }
+
+  /* Ghost button */
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-sm
+           border text-green-700 dark:text-green-400
+           transition-all duration-300
+           hover:bg-green-500/10 hover:-translate-y-0.5 active:translate-y-0;
+    border-color: rgba(34, 197, 94, 0.35);
+  }
+  .btn-ghost:hover {
+    border-color: rgba(34, 197, 94, 0.6);
+  }
+
+  /* Section tag pill */
+  .section-tag {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold mb-4;
+    background: rgba(34, 197, 94, 0.08);
+    color: #16a34a;
+    border: 1px solid rgba(34, 197, 94, 0.20);
+  }
+  .dark .section-tag {
+    color: #4ade80;
+  }
 }
 
+/* Canvas stays behind everything */
 canvas {
   position: fixed;
   inset: 0;
+  pointer-events: none;
+  z-index: 0;
 }
