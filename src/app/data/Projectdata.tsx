@@ -237,7 +237,7 @@ const projectData: ProjectDatatype[] = [
     level: ProjectLevel.HARD,
     isFeatured: true,
     githubLink: "https://github.com/Ahmednoorani258/UI-UX-hackathon",
-    vercelLink: "https://ui-ux-hackathon-five.vercel.app/",
+    vercelLink: "https://market-ready-ecommerce-app.vercel.app/",
   },
 
   {
