@@ -5,6 +5,7 @@ import { Metadata } from "next";
 import WhatsappButton from "@/components/WhatsappButton";
 import "./globals.css";
 import MouseTrackingBackground from "@/components/MouseTrackingComponent";
+import { Analytics } from '@vercel/analytics/next';
 
 export const metadata:Metadata = {
   title: {
@@ -45,6 +46,7 @@ export default function RootLayout({
         <WhatsappButton/>
       </main>
     </div>
+    <Analytics />
   </body>
 </html>
 
